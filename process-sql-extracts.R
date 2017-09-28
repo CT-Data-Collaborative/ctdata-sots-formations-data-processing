@@ -1,15 +1,15 @@
 library(data.table)
 
-month <- '5_8_2017'
+month <- '09_28_2017'
 formations_filename <- 'formations.csv'
 address_filename <- 'addresses.csv'
-raw_path <- paste('extracts/', month, sep='')
+raw_path <- paste('extracts/', month, '/', sep='')
 
 formations_path <- paste(raw_path, formations_filename, sep='')
 address_path <- paste(raw_path, address_filename, sep='')
 
 # Read formations
-formations <- fread(formations_pathj) # remove drop to keep id_bus_flng
+formations <- fread(formations_path) # remove drop to keep id_bus_flng
 formations <- formations[between(year, 1980, 2017)]
 
 # read address changes
@@ -211,11 +211,12 @@ setcolorder(data, c(1, 8, 9, 10, 2, 3, 4, 5, 6, 7))
 data_path <- paste('final', month, 'data.csv', sep='/')
 write.table(
     data,
-    "final/5_8_2017/data.csv",
+    data_path,
     sep = ",",
     row.names = F,
     na = "null"
 )
+
 
 # Write data to separate files by type
 for(type in unique(data$Type)) {
@@ -229,7 +230,6 @@ for(type in unique(data$Type)) {
         na = "null"
     )
 }
-
 
 # Write data to separate nested file structure by type (dir) and by year (csv)
 for(type in unique(data$Type)) {

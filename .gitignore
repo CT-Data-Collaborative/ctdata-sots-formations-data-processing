@@ -9,3 +9,4 @@ jsons/
 .RData
 .DS_Store
 .Rhistory
+.Rproj.user
