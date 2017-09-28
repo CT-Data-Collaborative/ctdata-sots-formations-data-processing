@@ -15,9 +15,12 @@
 ### Instructions
 
 1. cd to `monthly_rebuilds` folder, run following extract_formations commands:
+
 ```sots extract_formations --dbhost 0.0.0.0 --dbport 15432 --dbuser sots --dbpass [password] -q Address -o formations/9_2017/addresses.csv```
 
+
 ```sots extract_formations --dbhost 0.0.0.0 --dbport 15432 --dbuser sots --dbpass [password] -q Formations -o formations/9_2017/formations.csv```
+
 
 --dbpass [password] replace with your configured database password
 --dbport 15432 is required if you have a non-docker postgres service running on the 5432 port (this is configured in your dev.yml file)
@@ -25,10 +28,15 @@
 2. After running the extract_formations commands, do the following:
 
 a. Create three sub-folders in your local `ctdata-sots-formations-data-processing` folder structure (`./extracts`, `./final`, and `./json`)
+
 b. In the `./extracts` folder, create a sub-folder with today's date (i.e. `./09_28_2017`)
+
 c. In the `./final` folder, create a sub-folder with today's date (i.e. `./09_28_2017`) and within the date folder, create another folder called `./types`
+
 d. Copy the extracted data (addresses.csv and formations.csv) into the `./09_28_2017` sub-folder in the `./extracts` directory.
+
 e. Run the `processs-sql-extracts.R` command, setting the paths accordingly
+
 f. Run the `convert_to_json.py` file, setting paths accordingly
 
 
