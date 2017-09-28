@@ -12,3 +12,5 @@ The `convert_to_json.py` command can be executed as a command line script as fol
 `python convert_to_json.py -i [INPUT DIR WHERE R OUTPUT DATA TO] -o [OUTPUT DIR WHERE YOU WANT IT TO GO] -c`
 
 Replace paths accordingly. If you omit the `-c` flag at the end, the processing will be a "dry run" and no data will be written out.
+
+Finally, copy the final data into the '/dist/data/' directory in the 'sots-formations-app' folder and push '/dist' to s3.
