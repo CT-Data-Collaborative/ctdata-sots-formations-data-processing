@@ -1,0 +1,11 @@
+extract-address-changes.sql
+
+extract-formations.sql
+extracts/
+final/
+jsons/
+.idea/
+.Rproj.user/
+.RData
+.DS_Store
+.Rhistory
