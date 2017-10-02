@@ -25,20 +25,20 @@
 
 2. After running the extract_formations commands, do the following:
 
-- Create three sub-folders in your local `ctdata-sots-formations-data-processing` folder structure 
-   - `./extracts`
-   - `./final`
-   - `./json`
+   - Create three sub-folders in your local `ctdata-sots-formations-data-processing` folder structure 
+     - `./extracts`
+     - `./final`
+     - `./json`
 
-- In the `./extracts` folder, create a sub-folder with today's date (i.e. `./09_28_2017`)
+   - In the `./extracts` folder, create a sub-folder with today's date (i.e. `./09_28_2017`)
 
-- In the `./final` folder, create a sub-folder with today's date (i.e. `./09_28_2017`) and within the date folder, create another folder called `./types`
+   - In the `./final` folder, create a sub-folder with today's date (i.e. `./09_28_2017`) and within the date folder, create another folder called `./types`
 
-- Copy the extracted data (addresses.csv and formations.csv) into the `./09_28_2017` sub-folder in the `./extracts` directory.
+   - Copy the extracted data (addresses.csv and formations.csv) into the `./09_28_2017` sub-folder in the `./extracts` directory.
 
-- Run the `processs-sql-extracts.R` command, setting the paths accordingly, with the correct Month variable, set it equal to your date sub-folder name in the 'ctdata-sots-formations-data-processing' folder
+   - Run the `processs-sql-extracts.R` command, setting the paths accordingly, with the correct Month variable, set it equal to your date sub-folder name in the 'ctdata-sots-formations-data-processing' folder
 
-- Run the `convert_to_json.py` file, setting paths accordingly
+   - Run the `convert_to_json.py` file, setting paths accordingly
 
 
 3. The `convert_to_json.py` command can be executed as a command line script as follows:
