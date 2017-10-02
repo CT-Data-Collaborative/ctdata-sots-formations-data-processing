@@ -8,24 +8,27 @@
 
 3. Clone two repos to your local machine:
 
-```git clone git@github.com:CT-Data-Collaborative/ctdata-sots-formations-data-processing.git```
-
-```git clone git@github.com:CT-Data-Collaborative/ctdata-sots-formations.git```
+   ```git clone git@github.com:CT-Data-Collaborative/ctdata-sots-formations-data-processing.git```
+   
+   ```git clone git@github.com:CT-Data-Collaborative/ctdata-sots-formations.git```
 
 ### Instructions
 
 1. cd to `monthly_rebuilds` folder, run following extract_formations commands:
 
-```sots extract_formations --dbhost 0.0.0.0 --dbport 5432 --dbuser sots --dbpass [password] -q Address -o formations/9_2017/addresses.csv```
+   ```sots extract_formations --dbhost 0.0.0.0 --dbport 5432 --dbuser sots --dbpass [password] -q Address -o formations/9_2017/addresses.csv```
 
 
-```sots extract_formations --dbhost 0.0.0.0 --dbport 5432 --dbuser sots --dbpass [password] -q Formations -o formations/9_2017/formations.csv```
+   ```sots extract_formations --dbhost 0.0.0.0 --dbport 5432 --dbuser sots --dbpass [password] -q Formations -o formations/9_2017/formations.csv```
 
 --dbpass [password] replace with your configured database password
 
 2. After running the extract_formations commands, do the following:
 
-- Create three sub-folders in your local `ctdata-sots-formations-data-processing` folder structure (`./extracts`, `./final`, and `./json`)
+- Create three sub-folders in your local `ctdata-sots-formations-data-processing` folder structure 
+   - `./extracts`
+   - `./final`
+   - `./json`
 
 - In the `./extracts` folder, create a sub-folder with today's date (i.e. `./09_28_2017`)
 
@@ -33,7 +36,7 @@
 
 - Copy the extracted data (addresses.csv and formations.csv) into the `./09_28_2017` sub-folder in the `./extracts` directory.
 
-- Run the `processs-sql-extracts.R` command, setting the paths accordingly
+- Run the `processs-sql-extracts.R` command, setting the paths accordingly, with the correct Month variable, set it equal to your date sub-folder name in the 'ctdata-sots-formations-data-processing' folder
 
 - Run the `convert_to_json.py` file, setting paths accordingly
 
