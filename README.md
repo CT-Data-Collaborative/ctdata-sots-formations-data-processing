@@ -52,4 +52,3 @@ For example: `python2 convert_to_json.py -i final/09_28_2017/types -o json/09_28
 All of the directories need to already exist.
 
 4. Go to the [ctadat-sots-formations README](https://github.com/CT-Data-Collaborative/ctdata-sots-formations/blob/master/README.md) for the remaining steps 
-
