@@ -20,6 +20,10 @@
 
 
    ```sots extract_formations --dbhost 0.0.0.0 --dbport 5432 --dbuser sots --dbpass [password] -q Formations -o formations/9_2017/formations.csv```
+   
+      ```sots extract_formations --dbhost 0.0.0.0 --dbport 5432 --dbuser sots --dbpass [password] -q Starts -o formations/9_2017/starts.csv```
+      
+   ```sots extract_formations --dbhost 0.0.0.0 --dbport 5432 --dbuser sots --dbpass [password] -q Stops -o formations/9_2017/stops.csv```  
 
 --dbpass [password] replace with your configured database password
 
@@ -40,7 +44,6 @@
 
    - Run the `convert_to_json.py` file, setting paths accordingly
 
-
 3. The `convert_to_json.py` command can be executed as a command line script as follows:
 
 `python2 convert_to_json.py -i [INPUT DIR WHERE R OUTPUT DATA TO] -o [OUTPUT DIR WHERE YOU WANT IT TO GO] -c`
@@ -51,4 +54,6 @@ For example: `python2 convert_to_json.py -i final/09_28_2017/types -o json/09_28
 
 All of the directories need to already exist.
 
-4. Go to the [ctadat-sots-formations README](https://github.com/CT-Data-Collaborative/ctdata-sots-formations/blob/master/README.md) for the remaining steps 
+4. Use the starts and stops total dataset to use in the SOTS Starts and Stops [tool](https://github.com/CT-Data-Collaborative/sots-starts-stops)
+
+5. Go to the [ctdata-sots-formations README](https://github.com/CT-Data-Collaborative/ctdata-sots-formations/blob/master/README.md) for the remaining steps 
