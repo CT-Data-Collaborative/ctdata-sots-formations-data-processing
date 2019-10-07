@@ -22,9 +22,9 @@ def load_from_csv(data_file_path):
         csvReader = csv.DictReader(csvFile)
         for row in csvReader:
             o = {}
-            for k, v in row.items():
-                k = k.strip()
-                v = v.strip()
+            for k, v in row.iteritems():
+                k = k.decode("utf-8").strip()
+                v = v.decode("utf-8").strip()
                 if v == "null":
                     v = None
                 # if "FIPS" in k:

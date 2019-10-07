@@ -1,12 +1,13 @@
 extract-address-changes.sql
 
 extract-formations.sql
-extracts/
-final/
-jsons/
+extracts/*
+final/*
+json/*
 .idea/
 .Rproj.user/
 .RData
 .DS_Store
 .Rhistory
 .Rproj.user
+starts_stops/*

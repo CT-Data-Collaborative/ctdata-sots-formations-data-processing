@@ -284,8 +284,7 @@ backfill_SS <- expand.grid(
                   'Foreign Non-Stock Corporation',         
                   'Foreign Limited Liability Partnership',  
                   'Foreign Limited Partnership',            
-                  'Foreign Statutory Trust',
-                  'Forfeitures/Revocations'),
+                  'Foreign Statutory Trust'),
   year_filing = unique(ss_total$year_filing),
   month_filing = unique(ss_total$month_filing),
   Type = unique(ss_total$Type),
@@ -298,15 +297,10 @@ backfill_SS <- backfill_SS %>%
 
 ss_total <- merge(ss_total, backfill_SS, by = c("entity_type", "year_filing", "month_filing", "Type"), all.y=T)
 
-
 # Aggregate by year, month, type
 ss_total <- as.data.table(ss_total)
 ss_total2 <- ss_total[,list(Total = .N), by=list(year_filing, month_filing, Type, entity_type)]
 ss_total2 <- spread(ss_total2, Type, Total)
-
-# Ilya's addition: 1's are referring to empty backfilled lines. Replace them with 0.
-ss_total2$Stops[ss_total2$Stops == 1] <- 0
-ss_total2$Starts[ss_total2$Starts == 1] <- 0
 
 # Sum up all entities
 SS_CT <- ss_total2 %>% 
